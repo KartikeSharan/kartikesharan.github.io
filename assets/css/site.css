@@ -258,6 +258,19 @@ strong { font-weight: 700; }
 .edu h3 { margin-bottom: 4px; }
 .edu p { margin: 0 0 6px; }
 
+/* Module grades: two small tables, Year 1 and Year 2, side by side when there's room */
+.grades { margin-top: 56px; max-width: 64rem; }
+.grades h3 { margin-bottom: 6px; }
+.grades > p { margin: 0 0 8px; max-width: 46rem; }
+.grade-years { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px 48px; margin: 22px 0 18px; align-items: start; }
+.grade-table { width: 100%; border-collapse: collapse; font-size: var(--step-0); }
+.grade-table caption { text-align: left; font-family: var(--font-silk); font-size: var(--step--1); color: var(--muted); padding-bottom: 8px; }
+.grade-table th, .grade-table td { text-align: left; vertical-align: baseline; padding: 8px 12px 8px 0; border-bottom: 1.5px solid var(--trace); }
+.grade-table thead th { font-family: var(--font-silk); font-size: var(--step--1); color: var(--muted); font-weight: 400; border-bottom-color: var(--silk); }
+.grade-table .cr { font-family: var(--font-mono); color: var(--muted); width: 4.5rem; }
+.grade-table .gr { font-family: var(--font-mono); font-weight: 700; width: 3rem; padding-right: 0; }
+.grade-label { font-weight: 700; }
+
 /* ---------- Footer: the board's bottom edge, with break-away tabs ---------- */
 .foot { margin-top: clamp(72px, 9vw, 120px); padding: 46px 0 40px; position: relative; border-top: 2px solid var(--edge); }
 .foot::before {

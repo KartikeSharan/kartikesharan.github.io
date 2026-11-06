@@ -670,6 +670,10 @@ EXPERIENCE = [
      ['Owned the PCB layout of the company\'s <a href="projects/flight-controller.html">flight controller</a> alongside the schematic engineer.',
       'Repaired rework-damaged speed controllers back to spares stock.',
       'Dealt with suppliers on procurement, and with the mechanical and electronics engineers on interfaces.']),
+    ('Student Representative', 'Year 3 Electronic and Electrical Engineering, University of Glasgow', '2026 to now',
+     None,
+     ['Collect the issues students in my year raise, take them to meetings and present them.',
+      'Advocate for students to get their problems resolved.']),
     ('International Ambassador', 'James Watt School of Engineering', 'Feb 2026 to now',
      None,
      ['Presented to about 40 prospective exchange students in Chengdu, and now support two newly arrived exchange students.',
@@ -682,8 +686,54 @@ EXPERIENCE = [
      ['An early-stage start-up planning low-cost EV charging built into on-street parking, for streets of tenements with nowhere to charge.']),
 ]
 
+GRADES = [
+    ('Year 1, 2024 to 2025', [
+        ('Electronic Engineering 1X', 20, 'A2'),
+        ('Electronic Engineering 1Y', 20, 'A5'),
+        ('Engineering Skills 1', 10, 'A4'),
+        ('Materials 1', 10, 'A2'),
+        ('Dynamics 1', 10, 'C3'),
+        ('Engineering Mathematics 1', 40, 'A2'),
+        ('Thermodynamics 1', 10, 'A2')]),
+    ('Year 2, first semester, 2025', [
+        ('Digital Electronics 2', 10, 'A2'),
+        ('Electrical Circuits 2', 10, 'B1'),
+        ('Power Electronics 2', 10, 'A5'),
+        ('Introductory Programming 2', 10, 'A1'),
+        ('Engineering Mathematics 2', 20, 'A2')]),
+]
+
+YEAR3_MODULES = ['Communication Systems 3', 'Control 3', 'Electromagnetic Compatibility 3', 'Electronic Circuit Design 3',
+                 'Electronic Devices 3', 'Electronic System Design 3', 'Engineering Career Skills 3', 'Power Engineering 3',
+                 'Real Time Computer Systems 3', 'Simulation of Engineering Systems 3', 'Team Design Project EE3',
+                 'Advanced Programming and Software Engineering 3']
+
+
+def grades_html():
+    tables = []
+    for caption, rows in GRADES:
+        body = '\n'.join(f'          <tr><td>{m}</td><td class="cr">{c}</td><td class="gr">{g}</td></tr>' for m, c, g in rows)
+        tables.append(f'''      <table class="grade-table">
+        <caption>{caption}</caption>
+        <thead><tr><th scope="col">Module</th><th scope="col">Credits</th><th scope="col">Grade</th></tr></thead>
+        <tbody>
+{body}
+        </tbody>
+      </table>''')
+    year3 = ', '.join(YEAR3_MODULES[:-1]) + ' and ' + YEAR3_MODULES[-1]
+    return f'''    <div class="grades">
+      <h3>Module grades</h3>
+      <p class="muted">Glasgow grades run from A1, the highest, down through A5, then B1 to B3, C1 to C3 and so on. A1 to A5 are A grades, the band for first-class work.</p>
+      <div class="grade-years">
+{chr(10).join(tables)}
+      </div>
+      <p class="muted">The second semester of Year 2 was the exchange in Chengdu.</p>
+      <p><span class="grade-label">Year 3, 2026 to 2027, in progress:</span> {year3}.</p>
+    </div>'''
+
+
 BOM = [
-    ('KiCad', 'Six-layer flight controller with blind vias; two-layer drone kit; ERC, DRC, Gerbers and assembly files'),
+    ('KiCad','Six-layer flight controller with blind vias; two-layer drone kit; ERC, DRC, Gerbers and assembly files'),
     ('OrCAD Capture and Allegro', 'Year 1 boards, designed, built and tested; Year 2 design labs'),
     ('Verilog and Vivado', 'RISC16 processor: datapath, control FSM and testbenches'),
     ('VHDL and Quartus', 'Logic on a MAX 10 FPGA'),
@@ -804,6 +854,7 @@ def index_page():
         <p>English (native); Hindi, Nepali and Urdu (fluent spoken); Punjabi (conversational).</p>
       </div>
     </div>
+{grades_html()}
   </div>
 </section>
 </main>
