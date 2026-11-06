@@ -446,7 +446,7 @@ project(
 
 project(
     'stm32-labs', 'R2', 'STM32 lab programs',
-    'Ten programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.',
+    'Thirteen programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: a three-mode signal generator, timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.',
     [('Course', 'Embedded Processors, UESTC (2026); module mark 82%'),
      ('Board', 'NUCLEO-L432KC (Arm Cortex-M4F)'),
      ('Tools', 'C++, Mbed OS 6, Keil Studio'),
@@ -455,11 +455,14 @@ project(
 <section>
 <h2>The programs</h2>
 <div class="prose">
-<p>Keil Studio Cloud closed when Arm ended Mbed, taking the original projects with it, so these were recovered from the code printed in my lab reports.</p>
+<p>Keil Studio Cloud closed when Arm ended Mbed, taking the original projects with it. Lab 1's source files survived; the Lab 2 to 4 programs were recovered from the code printed in my lab reports.</p>
 </div>
 <div class="table-wrap"><table class="data">
 <thead><tr><th scope="col">Lab</th><th scope="col">Task</th><th scope="col">What it does</th></tr></thead>
 <tbody>
+<tr><td>1</td><td>2</td><td>Two push-buttons move the board between three modes (idle, blinking LED, LED on), acting on each press as it happens.</td></tr>
+<tr><td>1</td><td>3</td><td>A square wave from 100 Hz to 2 kHz, set by a potentiometer and timed in software while still watching the buttons.</td></tr>
+<tr><td>1</td><td>Final</td><td>A three-mode signal controller: idle, the potentiometer-controlled square wave, and a repeating pattern of 10, 20, 40 and 80 ms high and low steps.</td></tr>
 <tr><td>2</td><td>2.4</td><td>A 1 kHz PWM output whose duty cycle a timer interrupt switches between 70% and 30% every two seconds, with an LED showing which.</td></tr>
 <tr><td>3</td><td>2</td><td>Sets up the SPI bus for the ADXL345 accelerometer at a 2 MHz clock.</td></tr>
 <tr><td>3</td><td>3</td><td>Reads all three axes from the ADXL345.</td></tr>
@@ -672,7 +675,7 @@ MORE = [
     ('R1', 'Heart rate monitor', 'projects/heart-rate-monitor.html',
      'A Year 2 team of four built a finger-clip pulse monitor on an LPC1768, with a band-pass amplifier, beat detection and an LED display.'),
     ('R2', 'STM32 lab programs', 'projects/stm32-labs.html',
-     'Timers and PWM, an accelerometer over SPI and a temperature sensor over I2C, including shutdown mode.'),
+     'A three-mode signal generator, timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.'),
     ('R3', 'p-n junction in Sentaurus TCAD', 'projects/tcad-pn-junction.html',
      'A silicon junction simulated with and without recombination, and what the current curves show.'),
     ('R4', 'Signal processing in Python', 'projects/signal-processing.html',

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>STM32 lab programs: Kartike Sharan</title>
-<meta name="description" content="Ten programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.">
+<meta name="description" content="Thirteen programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: a three-mode signal generator, timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.">
 <meta name="author" content="Kartike Sharan">
 <meta name="theme-color" content="#123f2a">
 <link rel="canonical" href="https://kartikesharan.github.io/projects/stm32-labs.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="STM32 lab programs: Kartike Sharan">
-<meta property="og:description" content="Ten programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.">
+<meta property="og:description" content="Thirteen programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: a three-mode signal generator, timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.">
 <meta property="og:url" content="https://kartikesharan.github.io/projects/stm32-labs.html">
 <meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
 <div class="doc-head">
   <span class="ref">R2</span>
   <h1>STM32 lab programs</h1>
-  <p class="summary">Ten programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.</p>
+  <p class="summary">Thirteen programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: a three-mode signal generator, timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.</p>
   <dl class="facts">
   <div><dt>Course</dt><dd>Embedded Processors, UESTC (2026); module mark 82%</dd></div>
   <div><dt>Board</dt><dd>NUCLEO-L432KC (Arm Cortex-M4F)</dd></div>
@@ -45,11 +45,14 @@
 <section>
 <h2>The programs</h2>
 <div class="prose">
-<p>Keil Studio Cloud closed when Arm ended Mbed, taking the original projects with it, so these were recovered from the code printed in my lab reports.</p>
+<p>Keil Studio Cloud closed when Arm ended Mbed, taking the original projects with it. Lab 1's source files survived; the Lab 2 to 4 programs were recovered from the code printed in my lab reports.</p>
 </div>
 <div class="table-wrap"><table class="data">
 <thead><tr><th scope="col">Lab</th><th scope="col">Task</th><th scope="col">What it does</th></tr></thead>
 <tbody>
+<tr><td>1</td><td>2</td><td>Two push-buttons move the board between three modes (idle, blinking LED, LED on), acting on each press as it happens.</td></tr>
+<tr><td>1</td><td>3</td><td>A square wave from 100 Hz to 2 kHz, set by a potentiometer and timed in software while still watching the buttons.</td></tr>
+<tr><td>1</td><td>Final</td><td>A three-mode signal controller: idle, the potentiometer-controlled square wave, and a repeating pattern of 10, 20, 40 and 80 ms high and low steps.</td></tr>
 <tr><td>2</td><td>2.4</td><td>A 1 kHz PWM output whose duty cycle a timer interrupt switches between 70% and 30% every two seconds, with an LED showing which.</td></tr>
 <tr><td>3</td><td>2</td><td>Sets up the SPI bus for the ADXL345 accelerometer at a 2 MHz clock.</td></tr>
 <tr><td>3</td><td>3</td><td>Reads all three axes from the ADXL345.</td></tr>
