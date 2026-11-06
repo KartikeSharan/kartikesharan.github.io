@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 1 circuit boards: Kartike Sharan</title>
+<meta name="description" content="An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.">
+<meta name="author" content="Kartike Sharan">
+<meta name="theme-color" content="#123f2a">
+<link rel="canonical" href="https://kartikesharan.github.io/projects/year1-pcbs.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Year 1 circuit boards: Kartike Sharan">
+<meta property="og:description" content="An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.">
+<meta property="og:url" content="https://kartikesharan.github.io/projects/year1-pcbs.html">
+<meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/b612-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{var m=localStorage.getItem('mask');if(m&&m!=='green')document.documentElement.setAttribute('data-mask',m);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="home" href="../index.html">Kartike Sharan</a>
+    <nav aria-label="Site"><a href="../index.html#projects">All projects</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div class="doc-head">
+  <span class="ref">R5</span>
+  <h1>Year 1 circuit boards</h1>
+  <p class="summary">An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.</p>
+  <dl class="facts">
+  <div><dt>Course</dt><dd>Engineering Skills 1, University of Glasgow (2024)</dd></div>
+  <div><dt>Tools</dt><dd>OrCAD Capture, Allegro PCB Editor, bench supply, multimeter, soldering</dd></div>
+  </dl>
+</div>
+<article class="doc">
+
+<section>
+<h2>Electronic dice</h2>
+<div class="prose">
+<p>I designed the circuit, drew the schematic in OrCAD Capture, laid out a double-sided board in Allegro, then built and tested it myself. It uses a 74HC132 quad Schmitt NAND and a 74HC175 quad D flip-flop to light seven LEDs. Testing with a bench supply and multimeter for shorts and open circuits found some diodes placed the wrong way round, which I corrected.</p>
+</div>
+<div class="fig-pair">
+<figure class="fig ">
+  <div class="frame paper"><img src="../assets/img/dice-schematic.webp" alt="Schematic of the electronic dice" loading="lazy"></div>
+  <figcaption><b>Figure 1.</b> Dice schematic.</figcaption>
+</figure>
+<figure class="fig ">
+  <div class="frame paper"><img src="../assets/img/dice-top-pcb.webp" alt="Top copper layout of the electronic dice board" loading="lazy"></div>
+  <figcaption><b>Figure 2.</b> Dice board, top layer.</figcaption>
+</figure>
+</div>
+</section>
+
+<section>
+<h2>Logic board</h2>
+<div class="prose">
+<p>A 22-part board with 74HC14 Schmitt inverters, a 74HC164 shift register, 74HC86 XOR gates, seven LEDs and an LM2931 regulator. After testing the first board I re-routed more of the IC connections onto the bottom layer to reduce the board's complexity.</p>
+</div>
+<div class="fig-pair">
+<figure class="fig ">
+  <div class="frame paper"><img src="../assets/img/logic-board-schematic.webp" alt="Schematic of the logic board" loading="lazy"></div>
+  <figcaption><b>Figure 3.</b> Logic board schematic.</figcaption>
+</figure>
+<figure class="fig ">
+  <div class="frame paper"><img src="../assets/img/logic-board-top-pcb.webp" alt="Top copper layout of the logic board" loading="lazy"></div>
+  <figcaption><b>Figure 4.</b> Logic board, top layer.</figcaption>
+</figure>
+</div>
+</section>
+
+<div class="links">
+  <a class="pad-link" href="https://github.com/KartikeSharan/engineering-projects/tree/main/year1-pcb-design">Design files on GitHub</a>
+</div>
+</article>
+<nav class="pager" aria-label="More projects"><a href="ring-counter.html" rel="prev"><span>Previous</span>Ring counter on a MAX 10 FPGA</a><a href="../index.html#projects"><span>Back to</span>All projects</a></nav>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="muted">The quickest way to reach me is email. I'm free for an internship across summer 2027.</p>
+      <div class="connector">
+  
+  <a class="pad-link" href="mailto:&#75;&#97;&#114;&#116;&#105;&#107;&#101;&#83;&#104;&#97;&#114;&#97;&#110;&#48;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+  <a class="pad-link" href="https://www.linkedin.com/in/kartike-sharan/" rel="me">LinkedIn</a>
+  <a class="pad-link" href="https://github.com/KartikeSharan" rel="me">GitHub</a>
+</div>
+      <small>Rev 2026.11. Board renders are made from my Gerber files. Hosted on GitHub Pages.</small>
+    </div>
+    <fieldset class="mask-picker">
+      <legend>Solder mask colour</legend>
+      <div class="swatches">
+      <button type="button" data-mask="green" style="--sw:#123f2a" aria-pressed="true"><span class="label">Green</span></button>
+      <button type="button" data-mask="black" style="--sw:#1b1c1e" aria-pressed="false"><span class="label">Matte black</span></button>
+      <button type="button" data-mask="blue" style="--sw:#0f2f5c" aria-pressed="false"><span class="label">Blue</span></button>
+      <button type="button" data-mask="purple" style="--sw:#3a1d5c" aria-pressed="false"><span class="label">Purple</span></button>
+      <button type="button" data-mask="white" style="--sw:#f3f3ee" aria-pressed="false"><span class="label">White</span></button>
+      </div>
+    </fieldset>
+  </div>
+</footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

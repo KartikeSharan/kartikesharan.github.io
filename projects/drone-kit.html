@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Educational drone kit: Kartike Sharan</title>
+<meta name="description" content="A solder-free, modular drone kit that secondary-school pupils assemble and programme themselves. I proposed it for the society's schools outreach and designed its electronics.">
+<meta name="author" content="Kartike Sharan">
+<meta name="theme-color" content="#123f2a">
+<link rel="canonical" href="https://kartikesharan.github.io/projects/drone-kit.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Educational drone kit: Kartike Sharan">
+<meta property="og:description" content="A solder-free, modular drone kit that secondary-school pupils assemble and programme themselves. I proposed it for the society's schools outreach and designed its electronics.">
+<meta property="og:url" content="https://kartikesharan.github.io/projects/drone-kit.html">
+<meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/b612-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{var m=localStorage.getItem('mask');if(m&&m!=='green')document.documentElement.setAttribute('data-mask',m);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="home" href="../index.html">Kartike Sharan</a>
+    <nav aria-label="Site"><a href="../index.html#projects">All projects</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div class="doc-head">
+  <span class="ref">U2</span>
+  <h1>Educational drone kit</h1>
+  <p class="summary">A solder-free, modular drone kit that secondary-school pupils assemble and programme themselves. I proposed it for the society's schools outreach and designed its electronics.</p>
+  <dl class="facts">
+  <div><dt>Role</dt><dd>Proposed the kit; designed the electronics</dd></div>
+  <div><dt>Where</dt><dd>Glasgow University Drones, as Head of Electronics</dd></div>
+  <div><dt>When</dt><dd>2025 to 2026</dd></div>
+  <div><dt>Board</dt><dd>Two layers, 70.6 × 70.6 mm</dd></div>
+  <div><dt>Main parts</dt><dd>ESP32-C3 module, ICM-42670-P IMU, two DRV8833 dual H-bridges, TPS63001 buck-boost, BQ24074 charger</dd></div>
+  <div><dt>Status</dt><dd>First boards fabricated; assembly and testing next</dd></div>
+  </dl>
+</div>
+<article class="doc">
+
+<section>
+<h2>Why a kit</h2>
+<div class="prose">
+<p>The society runs outreach with secondary schools. I proposed a drone that pupils could build and program themselves without a soldering iron, and that could be taken apart and reused by the next group. It's the society's own project; the University isn't involved.</p>
+</div>
+<figure class="fig narrow">
+  <div class="frame"><img src="../assets/img/devkit-top.webp" alt="Rendered top side of the drone kit board, with the ESP32-C3 module at the top, motor connectors on the left and right edges and the charger and power circuitry at the bottom" loading="lazy"></div>
+  <figcaption><b>Figure 1.</b> Top side of the kit board, rendered from its Gerber files.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Design decisions</h2>
+<div class="prose">
+<ul>
+<li><strong>No soldering for pupils.</strong> JST connectors on the battery and motor outputs, and a USB-C receptacle for both power and programming.</li>
+<li><strong>A steady 3.3 V rail.</strong> A TPS63001 buck-boost converter holds 3.3 V across the LiPo battery's full discharge range. A diode-OR power path takes power from USB or the battery, with reverse-polarity protection, and a BQ24074 charges the battery.</li>
+<li><strong>Four motors from two chips.</strong> Two DRV8833 dual H-bridges drive the four motors.</li>
+<li><strong>Sensors that fit the pins.</strong> I ruled out sensors whose interfaces the microcontroller's free pins couldn't support, and presented the evidence to the team. The kit uses an ICM-42670-P IMU.</li>
+<li><strong>Safe for a classroom.</strong> Low-voltage rechargeable batteries and propeller guards, with the principles of the BS EN 71 toy-safety standard considered.</li>
+<li><strong>Fits the frame.</strong> I agreed the board's size and the position of parts, including the battery, with the mechanical team designing the chassis.</li>
+</ul>
+</div>
+<figure class="fig ">
+  <div class="frame paper"><a href="../assets/img/devkit-schematic.webp"><img src="../assets/img/devkit-schematic.webp" alt="Full schematic of the drone kit board" loading="lazy"></a></div>
+  <figcaption><b>Figure 2.</b> The kit's schematic. Select it to open the full-size image.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Running the project</h2>
+<div class="prose">
+<p>The team compared candidate parts against fixed criteria: compatibility, communication protocol, reliability, function, footprint and cost. I put together a budget of about £500 with a contingency, which was approved, and compared quotes from several PCB manufacturers. Once the design passed ERC and DRC I released the Gerbers and handed ordering to the team.</p>
+<p>As Head of Electronics I lead a team of three to five engineers, approve every schematic and PCB layout before it's released, and run KiCad workshops for members.</p>
+</div>
+</section>
+
+<div class="links">
+  <a class="pad-link" href="https://github.com/KartikeSharan/engineering-projects/tree/main/gud-drone-devkit">Design files on GitHub</a>
+</div>
+</article>
+<nav class="pager" aria-label="More projects"><a href="flight-controller.html" rel="prev"><span>Previous</span>Drone flight controller</a><a href="risc16-cpu.html" rel="next" style="text-align:right"><span>Next</span>RISC16 processor</a></nav>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="muted">The quickest way to reach me is email. I'm free for an internship across summer 2027.</p>
+      <div class="connector">
+  
+  <a class="pad-link" href="mailto:&#75;&#97;&#114;&#116;&#105;&#107;&#101;&#83;&#104;&#97;&#114;&#97;&#110;&#48;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+  <a class="pad-link" href="https://www.linkedin.com/in/kartike-sharan/" rel="me">LinkedIn</a>
+  <a class="pad-link" href="https://github.com/KartikeSharan" rel="me">GitHub</a>
+</div>
+      <small>Rev 2026.11. Board renders are made from my Gerber files. Hosted on GitHub Pages.</small>
+    </div>
+    <fieldset class="mask-picker">
+      <legend>Solder mask colour</legend>
+      <div class="swatches">
+      <button type="button" data-mask="green" style="--sw:#123f2a" aria-pressed="true"><span class="label">Green</span></button>
+      <button type="button" data-mask="black" style="--sw:#1b1c1e" aria-pressed="false"><span class="label">Matte black</span></button>
+      <button type="button" data-mask="blue" style="--sw:#0f2f5c" aria-pressed="false"><span class="label">Blue</span></button>
+      <button type="button" data-mask="purple" style="--sw:#3a1d5c" aria-pressed="false"><span class="label">Purple</span></button>
+      <button type="button" data-mask="white" style="--sw:#f3f3ee" aria-pressed="false"><span class="label">White</span></button>
+      </div>
+    </fieldset>
+  </div>
+</footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" role="img"><title>Block diagram of the cold-chain logger hardware</title>
+<defs><marker id="lb-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="bd-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="bd-chip" x="250" y="80" width="200" height="140" rx="6"/>
+<text class="bd-text" x="350" y="140" text-anchor="middle">NUCLEO-L432KC</text>
+<text class="bd-small" x="350" y="160" text-anchor="middle">STM32L432KC, Arm Cortex-M4F</text>
+<text class="bd-small" x="350" y="178" text-anchor="middle">Mbed OS 6</text>
+<rect class="bd-box" x="20" y="40" width="160" height="60" rx="6"/>
+<text class="bd-text" x="100" y="66" text-anchor="middle">TMP102</text>
+<text class="bd-small" x="100" y="85" text-anchor="middle">temperature</text>
+<rect class="bd-box" x="20" y="200" width="160" height="60" rx="6"/>
+<text class="bd-text" x="100" y="226" text-anchor="middle">ADXL345</text>
+<text class="bd-small" x="100" y="245" text-anchor="middle">accelerometer</text>
+<path class="bd-line" d="M180,70 H215 V120 H246" marker-start="url(#lb-arr)" marker-end="url(#lb-arr)"/>
+<text class="bd-small" x="190" y="112">I2C</text>
+<path class="bd-line" d="M180,230 H215 V180 H246" marker-start="url(#lb-arr)" marker-end="url(#lb-arr)"/>
+<text class="bd-small" x="188" y="198">SPI</text>
+<rect class="bd-box" x="520" y="20" width="160" height="50" rx="6"/>
+<text class="bd-text" x="600" y="50" text-anchor="middle">Push-button</text>
+<rect class="bd-box" x="520" y="90" width="160" height="50" rx="6"/>
+<text class="bd-text" x="600" y="120" text-anchor="middle">Green and red LEDs</text>
+<rect class="bd-box" x="520" y="160" width="160" height="50" rx="6"/>
+<text class="bd-text" x="600" y="190" text-anchor="middle">Buzzer</text>
+<rect class="bd-box" x="520" y="230" width="160" height="50" rx="6"/>
+<text class="bd-text" x="600" y="260" text-anchor="middle">Serial to PC</text>
+<path class="bd-line" d="M520,45 H485 V100 H454" marker-end="url(#lb-arr)"/>
+<text class="bd-small" x="460" y="40">interrupt</text>
+<path class="bd-line" d="M450,120 H516" marker-end="url(#lb-arr)"/>
+<path class="bd-line" d="M450,170 H485 V185 H516" marker-end="url(#lb-arr)"/>
+<text class="bd-small" x="462" y="200">PWM</text>
+<path class="bd-line" d="M450,205 H470 V255 H516" marker-end="url(#lb-arr)"/>
+<text class="bd-small" x="476" y="250">event log</text>
+</svg>

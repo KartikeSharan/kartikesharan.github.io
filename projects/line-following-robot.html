@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line-following robot: Kartike Sharan</title>
+<meta name="description" content="A Year 3 team design project: a robot that follows a line, detects obstacles and makes its own decisions. I lead the six-person team and own the firmware.">
+<meta name="author" content="Kartike Sharan">
+<meta name="theme-color" content="#123f2a">
+<link rel="canonical" href="https://kartikesharan.github.io/projects/line-following-robot.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Line-following robot: Kartike Sharan">
+<meta property="og:description" content="A Year 3 team design project: a robot that follows a line, detects obstacles and makes its own decisions. I lead the six-person team and own the firmware.">
+<meta property="og:url" content="https://kartikesharan.github.io/projects/line-following-robot.html">
+<meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/b612-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{var m=localStorage.getItem('mask');if(m&&m!=='green')document.documentElement.setAttribute('data-mask',m);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="home" href="../index.html">Kartike Sharan</a>
+    <nav aria-label="Site"><a href="../index.html#projects">All projects</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div class="doc-head">
+  <span class="ref">U4</span>
+  <h1>Line-following robot</h1>
+  <p class="summary">A Year 3 team design project: a robot that follows a line, detects obstacles and makes its own decisions. I lead the six-person team and own the firmware.</p>
+  <dl class="facts">
+  <div><dt>Team</dt><dd>Six students (Team 7), Team Design Project 3</dd></div>
+  <div><dt>My role</dt><dd>Project lead and firmware</dd></div>
+  <div><dt>When</dt><dd>Oct 2026 to now</dd></div>
+  <div><dt>Microcontroller</dt><dd>NXP KL25Z (Arm Cortex-M0+, 48 MHz) on a FRDM-KL25Z board</dd></div>
+  <div><dt>Motor driver</dt><dd>L298 dual H-bridge</dd></div>
+  <div><dt>Status</dt><dd>Firmware builds; first drive at the interim demo by 20 Nov 2026</dd></div>
+  </dl>
+</div>
+<article class="doc">
+
+<section>
+<h2>Leading the team</h2>
+<div class="prose">
+<p>I planned the project on a Gantt chart and gave each stage a named lead: schematic, breadboard prototype, PCB design and build, software and final assembly. I chose the L298 dual H-bridge motor driver and split the electronics into three boards: power distribution (12 V, 5 V from a 7805 and 3.3 V from an LD1117), motor drive, and a breakout for the microcontroller.</p>
+<p>While writing the wiring guide I noticed that the planned breakout left no free pins for the line sensors, and asked for the board's analogue header to be broken out before the PCB was made.</p>
+</div>
+<figure class="fig chart">
+  <div class="frame"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img"><title>Block diagram of the line-following robot electronics</title>
+<defs><marker id="rb-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="bd-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="bd-box" x="20" y="24" width="150" height="56" rx="6"/>
+<text class="bd-text" x="95" y="57" text-anchor="middle">12 V battery</text>
+<rect class="bd-box" x="250" y="24" width="250" height="56" rx="6"/>
+<text class="bd-text" x="375" y="50" text-anchor="middle">Power board</text>
+<text class="bd-small" x="375" y="68" text-anchor="middle">12 V, 5 V (7805), 3.3 V (LD1117)</text>
+<path class="bd-line" d="M170,52 H246" marker-end="url(#rb-arr)"/>
+<rect class="bd-box" x="20" y="150" width="150" height="70" rx="6"/>
+<text class="bd-text" x="95" y="180" text-anchor="middle">Laptop</text>
+<text class="bd-small" x="95" y="200" text-anchor="middle">build, flash, monitor</text>
+<rect class="bd-chip" x="250" y="130" width="250" height="110" rx="6"/>
+<text class="bd-text" x="375" y="170" text-anchor="middle">FRDM-KL25Z</text>
+<text class="bd-small" x="375" y="190" text-anchor="middle">NXP KL25Z, Arm Cortex-M0+, 48 MHz</text>
+<text class="bd-small" x="375" y="208" text-anchor="middle">register-level C firmware</text>
+<path class="bd-line" d="M170,185 H246" marker-start="url(#rb-arr)" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="178" y="176">USB, UART</text>
+<path class="bd-line" d="M330,80 V126" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="338" y="108">3.3 V, 5 V</text>
+<rect class="bd-box" x="580" y="130" width="160" height="70" rx="6"/>
+<text class="bd-text" x="660" y="160" text-anchor="middle">L298 H-bridge</text>
+<text class="bd-small" x="660" y="180" text-anchor="middle">motor driver board</text>
+<path class="bd-line" d="M500,165 H576" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="508" y="156">10 kHz PWM,</text>
+<text class="bd-small" x="508" y="186">direction</text>
+<path class="bd-line" d="M440,80 V100 H660 V126" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="560" y="94">12 V</text>
+<rect class="bd-box" x="580" y="250" width="160" height="56" rx="6"/>
+<text class="bd-text" x="660" y="283" text-anchor="middle">Two gearmotors</text>
+<path class="bd-line" d="M660,200 V246" marker-end="url(#rb-arr)"/>
+<rect class="bd-box" x="250" y="270" width="250" height="50" rx="6"/>
+<text class="bd-text" x="375" y="300" text-anchor="middle">Line and obstacle sensors</text>
+<path class="bd-line" d="M375,270 V244" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="383" y="262">analogue inputs</text>
+</svg></div>
+  <figcaption><b>Figure 1.</b> How the robot's electronics fit together.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Firmware</h2>
+<div class="prose">
+<p>The firmware is register-level C with no operating system or Mbed layer, so every peripheral is set up directly from the reference manual.</p>
+<ul>
+<li>Motor control with 10 kHz PWM, ramping from stop to full speed over 250 ms, a 100 ms stop before reversing (the gearmotor's datasheet asks for it) and braking at zero speed.</li>
+<li>A 1 ms SysTick timebase for timing, and UART debug output at 115200 baud.</li>
+<li>Calibration and motor-test modes, and the interim route stored as a table of distances and turns.</li>
+</ul>
+<h3>Fail-safes</h3>
+<ul>
+<li>If the processor faults, the fault handler cuts both motors.</li>
+<li>10 kΩ pull-down resistors hold the motor enables low while the microcontroller is in reset or being programmed, so the wheels can't start on their own.</li>
+</ul>
+<h3>Tooling for the team</h3>
+<p>I wrote a Python tool that installs the compiler, builds the firmware, flashes the board through its USB drive, checks that programming succeeded and opens a serial monitor, all run from VS Code tasks, so anyone in the team can build and flash with one command.</p>
+</div>
+<div class="note"><p>The firmware builds but hasn't driven the robot yet, and its calibration values are placeholders. I'll update this page after the interim demo.</p></div>
+</section>
+
+<div class="links">
+  <a class="pad-link" href="https://github.com/KartikeSharan/engineering-projects/tree/main/tdp3-line-following-robot">Firmware and wiring guide on GitHub</a>
+</div>
+</article>
+<nav class="pager" aria-label="More projects"><a href="risc16-cpu.html" rel="prev"><span>Previous</span>RISC16 processor</a><a href="cold-chain-logger.html" rel="next" style="text-align:right"><span>Next</span>Cold-chain transport logger</a></nav>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="muted">The quickest way to reach me is email. I'm free for an internship across summer 2027.</p>
+      <div class="connector">
+  
+  <a class="pad-link" href="mailto:&#75;&#97;&#114;&#116;&#105;&#107;&#101;&#83;&#104;&#97;&#114;&#97;&#110;&#48;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+  <a class="pad-link" href="https://www.linkedin.com/in/kartike-sharan/" rel="me">LinkedIn</a>
+  <a class="pad-link" href="https://github.com/KartikeSharan" rel="me">GitHub</a>
+</div>
+      <small>Rev 2026.11. Board renders are made from my Gerber files. Hosted on GitHub Pages.</small>
+    </div>
+    <fieldset class="mask-picker">
+      <legend>Solder mask colour</legend>
+      <div class="swatches">
+      <button type="button" data-mask="green" style="--sw:#123f2a" aria-pressed="true"><span class="label">Green</span></button>
+      <button type="button" data-mask="black" style="--sw:#1b1c1e" aria-pressed="false"><span class="label">Matte black</span></button>
+      <button type="button" data-mask="blue" style="--sw:#0f2f5c" aria-pressed="false"><span class="label">Blue</span></button>
+      <button type="button" data-mask="purple" style="--sw:#3a1d5c" aria-pressed="false"><span class="label">Purple</span></button>
+      <button type="button" data-mask="white" style="--sw:#f3f3ee" aria-pressed="false"><span class="label">White</span></button>
+      </div>
+    </fieldset>
+  </div>
+</footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

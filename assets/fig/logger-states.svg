@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 270" role="img"><title>State diagram of the cold-chain logger: idle, transport and alert</title>
+<defs><marker id="ls-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="bd-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="bd-box" x="20" y="90" width="140" height="64" rx="6"/>
+<text class="bd-text" x="90" y="120" text-anchor="middle">Idle</text>
+<text class="bd-small" x="90" y="140" text-anchor="middle">sensors not sampled</text>
+<rect class="bd-box" x="280" y="90" width="140" height="64" rx="6"/>
+<text class="bd-text" x="350" y="120" text-anchor="middle">Transport</text>
+<text class="bd-small" x="350" y="140" text-anchor="middle">sample every 2 s</text>
+<rect class="bd-box" x="540" y="90" width="140" height="64" rx="6"/>
+<text class="bd-text" x="610" y="120" text-anchor="middle">Alert</text>
+<text class="bd-small" x="610" y="140" text-anchor="middle">red LED, 2 kHz beep</text>
+<path class="bd-line" d="M160,108 H276" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="220" y="98" text-anchor="middle">button: start</text>
+<path class="bd-line" d="M280,136 H164" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="220" y="160" text-anchor="middle">button: stop,</text>
+<text class="bd-small" x="220" y="175" text-anchor="middle">print event log</text>
+<path class="bd-line" d="M420,108 H536" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="480" y="82" text-anchor="middle">temperature out</text>
+<text class="bd-small" x="480" y="97" text-anchor="middle">of range, or shock</text>
+<path class="bd-line" d="M540,136 H424" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="480" y="160" text-anchor="middle">3 good readings</text>
+<text class="bd-small" x="480" y="175" text-anchor="middle">in a row</text>
+<path class="bd-line" d="M610,154 V222 H90 V158" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="350" y="244" text-anchor="middle">button: stop, print event log</text>
+<path class="bd-line thin" d="M90,30 V86" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="100" y="40">power on</text>
+</svg>

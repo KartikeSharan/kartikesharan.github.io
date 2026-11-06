@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ring counter on a MAX 10 FPGA: Kartike Sharan</title>
+<meta name="description" content="Digital logic in Quartus on a DE10-Lite board: a ripple-carry adder driving a seven-segment display, a ripple counter and an 8-bit ring counter.">
+<meta name="author" content="Kartike Sharan">
+<meta name="theme-color" content="#123f2a">
+<link rel="canonical" href="https://kartikesharan.github.io/projects/ring-counter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ring counter on a MAX 10 FPGA: Kartike Sharan">
+<meta property="og:description" content="Digital logic in Quartus on a DE10-Lite board: a ripple-carry adder driving a seven-segment display, a ripple counter and an 8-bit ring counter.">
+<meta property="og:url" content="https://kartikesharan.github.io/projects/ring-counter.html">
+<meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/b612-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{var m=localStorage.getItem('mask');if(m&&m!=='green')document.documentElement.setAttribute('data-mask',m);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="home" href="../index.html">Kartike Sharan</a>
+    <nav aria-label="Site"><a href="../index.html#projects">All projects</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div class="doc-head">
+  <span class="ref">R4</span>
+  <h1>Ring counter on a MAX 10 FPGA</h1>
+  <p class="summary">Digital logic in Quartus on a DE10-Lite board: a ripple-carry adder driving a seven-segment display, a ripple counter and an 8-bit ring counter.</p>
+  <dl class="facts">
+  <div><dt>Course</dt><dd>Digital Electronics 2, University of Glasgow (2025)</dd></div>
+  <div><dt>Board</dt><dd>Terasic DE10-Lite (Intel MAX 10 FPGA)</dd></div>
+  <div><dt>Tools</dt><dd>VHDL, Quartus, Tektronix oscilloscope, signal generator</dd></div>
+  </dl>
+</div>
+<article class="doc">
+
+<section>
+<h2>The ring counter</h2>
+<div class="prose">
+<p>I converted a provided 8-bit shift register into a ring counter in Quartus's block editor by feeding its last output back to its serial input and parallel-loading 00000001. I checked reset and shifting in a waveform simulation before programming the board, assigned the pins, then clocked it from a push-button and from an external signal generator, checking the clock on an oscilloscope. The pattern repeats every eight clock cycles.</p>
+</div>
+<figure class="fig ">
+  <div class="frame paper"><img src="../assets/img/ring-simulation-waveform.webp" alt="Quartus waveform simulation of the ring counter shifting a single 1 through eight outputs" loading="lazy"></div>
+  <figcaption><b>Figure 1.</b> Simulating the ring counter before programming the board.</figcaption>
+</figure>
+<figure class="fig narrow">
+  <div class="frame"><img src="../assets/img/ring-fpga.webp" alt="Lab bench with a signal generator and oscilloscope connected to the FPGA board" loading="lazy"></div>
+  <figcaption><b>Figure 2.</b> The bench set-up.</figcaption>
+</figure>
+</section>
+
+<div class="links">
+  <a class="pad-link" href="https://github.com/KartikeSharan/engineering-projects/tree/main/de2-vhdl-ring-counter">Report on GitHub</a>
+</div>
+</article>
+<nav class="pager" aria-label="More projects"><a href="signal-processing.html" rel="prev"><span>Previous</span>Signal processing in Python</a><a href="year1-pcbs.html" rel="next" style="text-align:right"><span>Next</span>Year 1 circuit boards</a></nav>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="muted">The quickest way to reach me is email. I'm free for an internship across summer 2027.</p>
+      <div class="connector">
+  
+  <a class="pad-link" href="mailto:&#75;&#97;&#114;&#116;&#105;&#107;&#101;&#83;&#104;&#97;&#114;&#97;&#110;&#48;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+  <a class="pad-link" href="https://www.linkedin.com/in/kartike-sharan/" rel="me">LinkedIn</a>
+  <a class="pad-link" href="https://github.com/KartikeSharan" rel="me">GitHub</a>
+</div>
+      <small>Rev 2026.11. Board renders are made from my Gerber files. Hosted on GitHub Pages.</small>
+    </div>
+    <fieldset class="mask-picker">
+      <legend>Solder mask colour</legend>
+      <div class="swatches">
+      <button type="button" data-mask="green" style="--sw:#123f2a" aria-pressed="true"><span class="label">Green</span></button>
+      <button type="button" data-mask="black" style="--sw:#1b1c1e" aria-pressed="false"><span class="label">Matte black</span></button>
+      <button type="button" data-mask="blue" style="--sw:#0f2f5c" aria-pressed="false"><span class="label">Blue</span></button>
+      <button type="button" data-mask="purple" style="--sw:#3a1d5c" aria-pressed="false"><span class="label">Purple</span></button>
+      <button type="button" data-mask="white" style="--sw:#f3f3ee" aria-pressed="false"><span class="label">White</span></button>
+      </div>
+    </fieldset>
+  </div>
+</footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drone flight controller: Kartike Sharan</title>
+<meta name="description" content="PCB layout of a six-layer drone flight controller for Atreides Industries, an early-stage drone start-up.">
+<meta name="author" content="Kartike Sharan">
+<meta name="theme-color" content="#123f2a">
+<link rel="canonical" href="https://kartikesharan.github.io/projects/flight-controller.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Drone flight controller: Kartike Sharan">
+<meta property="og:description" content="PCB layout of a six-layer drone flight controller for Atreides Industries, an early-stage drone start-up.">
+<meta property="og:url" content="https://kartikesharan.github.io/projects/flight-controller.html">
+<meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/b612-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{var m=localStorage.getItem('mask');if(m&&m!=='green')document.documentElement.setAttribute('data-mask',m);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="home" href="../index.html">Kartike Sharan</a>
+    <nav aria-label="Site"><a href="../index.html#projects">All projects</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<div class="doc-head">
+  <span class="ref">U1</span>
+  <h1>Drone flight controller</h1>
+  <p class="summary">PCB layout of a six-layer drone flight controller for Atreides Industries, an early-stage drone start-up.</p>
+  <dl class="facts">
+  <div><dt>Role</dt><dd>PCB layout, alongside the schematic engineer</dd></div>
+  <div><dt>Where</dt><dd>Atreides Industries (voluntary role)</dd></div>
+  <div><dt>When</dt><dd>Jun to Nov 2025</dd></div>
+  <div><dt>Board</dt><dd>Six layers, 59.6 × 66.6 mm, impedance-controlled stack-up</dd></div>
+  <div><dt>Main parts</dt><dd>STM32H743 (169-ball BGA, 0.5 mm pitch), BMI323 IMU, BMM350 magnetometer, BME280 pressure sensor, USB-C</dd></div>
+  <div><dt>Tools</dt><dd>KiCad</dd></div>
+  </dl>
+</div>
+<article class="doc">
+
+<section>
+<h2>The board</h2>
+<div class="prose">
+<p>This is the flight controller for the start-up's drone: the board that reads the motion sensors and runs the flight software. It's built around an STM32H743 microcontroller in a 169-ball BGA package with a 0.5 mm ball pitch, with a BMI323 inertial measurement unit, a BMM350 magnetometer, a BME280 pressure sensor, a 16 MHz crystal and a USB-C connector.</p>
+</div>
+<figure class="fig narrow">
+  <div class="frame"><img src="../assets/img/fc-top.webp" alt="Rendered top side of the flight controller, showing the BGA microcontroller, sensors, USB-C connector and the header along the bottom edge" loading="lazy"></div>
+  <figcaption><b>Figure 1.</b> Top side, rendered from the Gerber files that went to fabrication.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>What I did</h2>
+<div class="prose">
+<p>I owned the PCB layout. The circuit itself came from the company's schematic engineer, and I worked alongside them to turn it into a board that could be made.</p>
+<ul>
+<li>Checked every footprint against the manufacturer's drawing.</li>
+<li>Ran the electrical and design rule checks (ERC and DRC) and resolved every violation.</li>
+<li>Where the choice of part was mine, compared the options on performance, size and cost.</li>
+<li>Kept the board's interfaces compatible with what the mechanical and electronics engineers were building around it.</li>
+<li>Dealt with suppliers on procurement.</li>
+<li>Delivered the manufacture-ready files: Gerbers, drill files, the bill of materials and pick-and-place data.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Inside the board</h2>
+<div class="prose">
+<p>The board has six copper layers in an impedance-controlled stack-up. Most of the parts and short routes sit on the top layer, inner layer 2 is a solid copper plane, and the other inner layers carry most of the signal routing. 257 blind vias run from the top layer down to one of the inner layers, the usual way to escape-route a 0.5 mm-pitch BGA, alongside 13 through-holes and 4 slots.</p>
+<p>Pick a layer to see it on its own.</p>
+</div>
+<div class="layers">
+  <div class="stack" role="img" aria-label="Copper layers of the flight controller, one at a time">
+    <div class="layer" data-layer="L1" style="--src:url(/assets/img/fc-layers/L1_top.png)"></div>
+    <div class="layer" data-layer="L2" style="--src:url(/assets/img/fc-layers/L2_in1.png)"></div>
+    <div class="layer" data-layer="L3" style="--src:url(/assets/img/fc-layers/L3_in2.png)"></div>
+    <div class="layer" data-layer="L4" style="--src:url(/assets/img/fc-layers/L4_in3.png)"></div>
+    <div class="layer" data-layer="L5" style="--src:url(/assets/img/fc-layers/L5_in4.png)"></div>
+    <div class="layer" data-layer="L6" style="--src:url(/assets/img/fc-layers/L6_bottom.png)"></div>
+    <div class="layer silk" data-layer="silk" style="--src:url(/assets/img/fc-layers/silk_top.png)"></div>
+  </div>
+  <div>
+    <div class="layer-btns" aria-label="Choose a copper layer">
+    <button type="button" data-layer="all" data-note="Top copper and silkscreen, with the inner layers faintly behind." aria-pressed="true"><span class="ref">All</span><span>Top side</span></button>
+    <button type="button" data-layer="L1" data-note="Parts, short routes and the BGA pads." aria-pressed="false"><span class="ref">L1</span><span>Top copper</span></button>
+    <button type="button" data-layer="L2" data-note="Signal routing fanned out from the BGA." aria-pressed="false"><span class="ref">L2</span><span>Inner 1</span></button>
+    <button type="button" data-layer="L3" data-note="A solid copper plane across the board." aria-pressed="false"><span class="ref">L3</span><span>Inner 2</span></button>
+    <button type="button" data-layer="L4" data-note="A bus of parallel signals running to the header along the bottom edge." aria-pressed="false"><span class="ref">L4</span><span>Inner 3</span></button>
+    <button type="button" data-layer="L5" data-note="More signal routing from the BGA." aria-pressed="false"><span class="ref">L5</span><span>Inner 4</span></button>
+    <button type="button" data-layer="L6" data-note="Almost empty: only through-hole pads." aria-pressed="false"><span class="ref">L6</span><span>Bottom copper</span></button>
+    </div>
+    <p class="layer-note muted" aria-live="polite"></p>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>Also at Atreides: repairing ESCs</h2>
+<div class="prose">
+<p>A batch of electronic speed controllers had burnt tracks and excess solder. I worked out that the damage came from earlier rework rather than failure in service, so the units could be saved. I desoldered the damaged areas, cleaned them with isopropyl alcohol, bridged the burnt tracks with wire links and checked continuity before returning them to spares.</p>
+</div>
+</section>
+
+<section>
+<h2>What I took from it</h2>
+<div class="prose">
+<p>Joining a start-up this early showed me how a small company actually works: everyone pitches in and takes on far more than their job title. Working directly with the CEO and seeing what he does day to day was the most valuable part.</p>
+</div>
+</section>
+
+<div class="links">
+  <a class="pad-link" href="https://github.com/KartikeSharan/engineering-projects/tree/main/atreides-flight-controller">Design files on GitHub</a>
+</div>
+</article>
+<nav class="pager" aria-label="More projects"><span></span><a href="drone-kit.html" rel="next" style="text-align:right"><span>Next</span>Educational drone kit</a></nav>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="muted">The quickest way to reach me is email. I'm free for an internship across summer 2027.</p>
+      <div class="connector">
+  
+  <a class="pad-link" href="mailto:&#75;&#97;&#114;&#116;&#105;&#107;&#101;&#83;&#104;&#97;&#114;&#97;&#110;&#48;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+  <a class="pad-link" href="https://www.linkedin.com/in/kartike-sharan/" rel="me">LinkedIn</a>
+  <a class="pad-link" href="https://github.com/KartikeSharan" rel="me">GitHub</a>
+</div>
+      <small>Rev 2026.11. Board renders are made from my Gerber files. Hosted on GitHub Pages.</small>
+    </div>
+    <fieldset class="mask-picker">
+      <legend>Solder mask colour</legend>
+      <div class="swatches">
+      <button type="button" data-mask="green" style="--sw:#123f2a" aria-pressed="true"><span class="label">Green</span></button>
+      <button type="button" data-mask="black" style="--sw:#1b1c1e" aria-pressed="false"><span class="label">Matte black</span></button>
+      <button type="button" data-mask="blue" style="--sw:#0f2f5c" aria-pressed="false"><span class="label">Blue</span></button>
+      <button type="button" data-mask="purple" style="--sw:#3a1d5c" aria-pressed="false"><span class="label">Purple</span></button>
+      <button type="button" data-mask="white" style="--sw:#f3f3ee" aria-pressed="false"><span class="label">White</span></button>
+      </div>
+    </fieldset>
+  </div>
+</footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

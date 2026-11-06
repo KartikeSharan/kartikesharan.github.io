@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kartike Sharan: electronics, embedded systems and digital design</title>
+<meta name="description" content="Kartike Sharan, a third-year Electronic and Electrical Engineering student at the University of Glasgow: PCB design, embedded firmware and digital hardware.">
+<meta name="author" content="Kartike Sharan">
+<meta name="theme-color" content="#123f2a">
+<link rel="canonical" href="https://kartikesharan.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kartike Sharan: electronics, embedded systems and digital design">
+<meta property="og:description" content="Kartike Sharan, a third-year Electronic and Electrical Engineering student at the University of Glasgow: PCB design, embedded firmware and digital hardware.">
+<meta property="og:url" content="https://kartikesharan.github.io/">
+<meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/b612-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>try{var m=localStorage.getItem('mask');if(m&&m!=='green')document.documentElement.setAttribute('data-mask',m);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<div class="board" id="projects">
+  <span class="hole tl" aria-hidden="true"></span><span class="hole tr" aria-hidden="true"></span>
+  <span class="hole bl" aria-hidden="true"></span><span class="hole br" aria-hidden="true"></span>
+  <span class="fid a" aria-hidden="true"></span><span class="fid b" aria-hidden="true"></span>
+  <svg class="traces" aria-hidden="true"></svg>
+  <header class="titleblock">
+    <div>
+      <h1>Kartike Sharan</h1>
+      <p class="intro">Third-year Electronic and Electrical Engineering student at the University of Glasgow. I lay out circuit boards, write firmware for Arm microcontrollers and build digital logic in Verilog.</p>
+      <p class="intro">Looking for a summer 2027 internship in hardware design, verification, embedded systems or electronics.</p>
+      <div class="connector">
+  <span class="ref" aria-hidden="true">J1</span>
+  <a class="pad-link" href="mailto:&#75;&#97;&#114;&#116;&#105;&#107;&#101;&#83;&#104;&#97;&#114;&#97;&#110;&#48;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+  <a class="pad-link" href="https://www.linkedin.com/in/kartike-sharan/" rel="me">LinkedIn</a>
+  <a class="pad-link" href="https://github.com/KartikeSharan" rel="me">GitHub</a>
+</div>
+    </div>
+    <div class="status" aria-hidden="true">
+      <span class="led"><i></i>PWR</span>
+      <span>Glasgow, Scotland</span>
+      <span>Rev 2026.11</span>
+    </div>
+  </header>
+  <h2 class="label" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Projects</h2>
+  <div class="parts">
+<div class="part big">
+  <a class="fp" href="projects/flight-controller.html">
+    <span class="desig" aria-hidden="true">U1</span><span class="pin1" aria-hidden="true"></span>
+    <figure><img src="assets/img/fc-top.webp" alt="" loading="eager"></figure>
+    <div class="body">
+      <h3>Drone flight controller</h3>
+      <p>Layout of a six-layer drone flight controller for a start-up, built around a 169-ball STM32H7 with blind vias into the inner layers.</p>
+      <p class="tools">KiCad</p>
+      <span class="state">Industry, 2025</span>
+    </div>
+  </a>
+</div>
+<div class="part big">
+  <a class="fp" href="projects/drone-kit.html">
+    <span class="desig" aria-hidden="true">U2</span><span class="pin1" aria-hidden="true"></span>
+    <figure><img src="assets/img/devkit-top.webp" alt="" loading="eager"></figure>
+    <div class="body">
+      <h3>Educational drone kit</h3>
+      <p>A solder-free drone kit that pupils assemble and programme themselves. I proposed it for the society's school outreach and designed the electronics.</p>
+      <p class="tools">KiCad, ESP32-C3</p>
+      <span class="state">Boards fabricated</span>
+    </div>
+  </a>
+</div>
+<div class="part ">
+  <a class="fp" href="projects/risc16-cpu.html">
+    <span class="desig" aria-hidden="true">U3</span><span class="pin1" aria-hidden="true"></span>
+    <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744 274" class="wave" aria-hidden="true"><title>Waveform of the first four instructions</title>
+<line class="wv-grid" x1="80.0" y1="4" x2="80.0" y2="250"/>
+<line class="wv-grid" x1="240.0" y1="4" x2="240.0" y2="250"/>
+<line class="wv-grid" x1="400.0" y1="4" x2="400.0" y2="250"/>
+<line class="wv-grid" x1="560.0" y1="4" x2="560.0" y2="250"/>
+<line class="wv-grid" x1="720.0" y1="4" x2="720.0" y2="250"/>
+<text class="wv-name" x="4" y="24">clk</text>
+<path class="wv-clk" d="M64.0,28 H80.0 V12 H96.0 V28 H112.0 V12 H128.0 V28 H144.0 V12 H160.0 V28 H176.0 V12 H192.0 V28 H208.0 V12 H224.0 V28 H240.0 V12 H256.0 V28 H272.0 V12 H288.0 V28 H304.0 V12 H320.0 V28 H336.0 V12 H352.0 V28 H368.0 V12 H384.0 V28 H400.0 V12 H416.0 V28 H432.0 V12 H448.0 V28 H464.0 V12 H480.0 V28 H496.0 V12 H512.0 V28 H528.0 V12 H544.0 V28 H560.0 V12 H576.0 V28 H592.0 V12 H608.0 V28 H624.0 V12 H640.0 V28 H656.0 V12 H672.0 V28 H688.0 V12 H704.0 V28 H720.0 V12 H736.0"/>
+<text class="wv-name" x="4" y="54">state</text>
+<path class="wv-bus" d="M66.0,42 H78.0 L80.0,50 L78.0,58 H66.0 L64.0,50 Z"/>
+<path class="wv-bus" d="M82.0,42 H110.0 L112.0,50 L110.0,58 H82.0 L80.0,50 Z"/>
+<text class="wv-val" x="96.0" y="53.5" text-anchor="middle">F</text>
+<path class="wv-bus" d="M114.0,42 H142.0 L144.0,50 L142.0,58 H114.0 L112.0,50 Z"/>
+<text class="wv-val" x="128.0" y="53.5" text-anchor="middle">D</text>
+<path class="wv-bus" d="M146.0,42 H206.0 L208.0,50 L206.0,58 H146.0 L144.0,50 Z"/>
+<text class="wv-val" x="176.0" y="53.5" text-anchor="middle">E</text>
+<path class="wv-bus" d="M210.0,42 H238.0 L240.0,50 L238.0,58 H210.0 L208.0,50 Z"/>
+<text class="wv-val" x="224.0" y="53.5" text-anchor="middle">W</text>
+<path class="wv-bus" d="M242.0,42 H270.0 L272.0,50 L270.0,58 H242.0 L240.0,50 Z"/>
+<text class="wv-val" x="256.0" y="53.5" text-anchor="middle">F</text>
+<path class="wv-bus" d="M274.0,42 H302.0 L304.0,50 L302.0,58 H274.0 L272.0,50 Z"/>
+<text class="wv-val" x="288.0" y="53.5" text-anchor="middle">D</text>
+<path class="wv-bus" d="M306.0,42 H366.0 L368.0,50 L366.0,58 H306.0 L304.0,50 Z"/>
+<text class="wv-val" x="336.0" y="53.5" text-anchor="middle">E</text>
+<path class="wv-bus" d="M370.0,42 H398.0 L400.0,50 L398.0,58 H370.0 L368.0,50 Z"/>
+<text class="wv-val" x="384.0" y="53.5" text-anchor="middle">W</text>
+<path class="wv-bus" d="M402.0,42 H430.0 L432.0,50 L430.0,58 H402.0 L400.0,50 Z"/>
+<text class="wv-val" x="416.0" y="53.5" text-anchor="middle">F</text>
+<path class="wv-bus" d="M434.0,42 H462.0 L464.0,50 L462.0,58 H434.0 L432.0,50 Z"/>
+<text class="wv-val" x="448.0" y="53.5" text-anchor="middle">D</text>
+<path class="wv-bus" d="M466.0,42 H526.0 L528.0,50 L526.0,58 H466.0 L464.0,50 Z"/>
+<text class="wv-val" x="496.0" y="53.5" text-anchor="middle">E</text>
+<path class="wv-bus" d="M530.0,42 H558.0 L560.0,50 L558.0,58 H530.0 L528.0,50 Z"/>
+<text class="wv-val" x="544.0" y="53.5" text-anchor="middle">W</text>
+<path class="wv-bus" d="M562.0,42 H590.0 L592.0,50 L590.0,58 H562.0 L560.0,50 Z"/>
+<text class="wv-val" x="576.0" y="53.5" text-anchor="middle">F</text>
+<path class="wv-bus" d="M594.0,42 H622.0 L624.0,50 L622.0,58 H594.0 L592.0,50 Z"/>
+<text class="wv-val" x="608.0" y="53.5" text-anchor="middle">D</text>
+<path class="wv-bus" d="M626.0,42 H686.0 L688.0,50 L686.0,58 H626.0 L624.0,50 Z"/>
+<text class="wv-val" x="656.0" y="53.5" text-anchor="middle">E</text>
+<path class="wv-bus" d="M690.0,42 H718.0 L720.0,50 L718.0,58 H690.0 L688.0,50 Z"/>
+<text class="wv-val" x="704.0" y="53.5" text-anchor="middle">W</text>
+<path class="wv-bus" d="M722.0,42 H734.0 L736.0,50 L734.0,58 H722.0 L720.0,50 Z"/>
+<text class="wv-val" x="728.0" y="53.5" text-anchor="middle">F</text>
+<text class="wv-name" x="4" y="84">PC</text>
+<path class="wv-bus" d="M66.0,72 H78.0 L80.0,80 L78.0,88 H66.0 L64.0,80 Z"/>
+<text class="wv-val" x="72.0" y="83.5" text-anchor="middle">0</text>
+<path class="wv-bus" d="M82.0,72 H238.0 L240.0,80 L238.0,88 H82.0 L80.0,80 Z"/>
+<text class="wv-val" x="160.0" y="83.5" text-anchor="middle">1</text>
+<path class="wv-bus" d="M242.0,72 H398.0 L400.0,80 L398.0,88 H242.0 L240.0,80 Z"/>
+<text class="wv-val" x="320.0" y="83.5" text-anchor="middle">2</text>
+<path class="wv-bus" d="M402.0,72 H558.0 L560.0,80 L558.0,88 H402.0 L400.0,80 Z"/>
+<text class="wv-val" x="480.0" y="83.5" text-anchor="middle">3</text>
+<path class="wv-bus" d="M562.0,72 H718.0 L720.0,80 L718.0,88 H562.0 L560.0,80 Z"/>
+<text class="wv-val" x="640.0" y="83.5" text-anchor="middle">4</text>
+<path class="wv-bus" d="M722.0,72 H734.0 L736.0,80 L734.0,88 H722.0 L720.0,80 Z"/>
+<text class="wv-val" x="728.0" y="83.5" text-anchor="middle">5</text>
+<text class="wv-name" x="4" y="114">IR</text>
+<path class="wv-bus" d="M66.0,102 H78.0 L80.0,110 L78.0,118 H66.0 L64.0,110 Z"/>
+<path class="wv-bus" d="M82.0,102 H238.0 L240.0,110 L238.0,118 H82.0 L80.0,110 Z"/>
+<text class="wv-val" x="160.0" y="113.5" text-anchor="middle">MOV R0,53</text>
+<path class="wv-bus" d="M242.0,102 H398.0 L400.0,110 L398.0,118 H242.0 L240.0,110 Z"/>
+<text class="wv-val" x="320.0" y="113.5" text-anchor="middle">MOV R1,15</text>
+<path class="wv-bus" d="M402.0,102 H558.0 L560.0,110 L558.0,118 H402.0 L400.0,110 Z"/>
+<text class="wv-val" x="480.0" y="113.5" text-anchor="middle">MOV R2,R1</text>
+<path class="wv-bus" d="M562.0,102 H718.0 L720.0,110 L718.0,118 H562.0 L560.0,110 Z"/>
+<text class="wv-val" x="640.0" y="113.5" text-anchor="middle">ADD R2,33</text>
+<path class="wv-bus" d="M722.0,102 H734.0 L736.0,110 L734.0,118 H722.0 L720.0,110 Z"/>
+<text class="wv-name" x="4" y="144">R0</text>
+<path class="wv-bus" d="M66.0,132 H206.0 L208.0,140 L206.0,148 H66.0 L64.0,140 Z"/>
+<text class="wv-val" x="136.0" y="143.5" text-anchor="middle">0</text>
+<path class="wv-bus" d="M210.0,132 H734.0 L736.0,140 L734.0,148 H210.0 L208.0,140 Z"/>
+<text class="wv-val" x="472.0" y="143.5" text-anchor="middle">53</text>
+<text class="wv-name" x="4" y="174">R1</text>
+<path class="wv-bus" d="M66.0,162 H366.0 L368.0,170 L366.0,178 H66.0 L64.0,170 Z"/>
+<text class="wv-val" x="216.0" y="173.5" text-anchor="middle">0</text>
+<path class="wv-bus" d="M370.0,162 H734.0 L736.0,170 L734.0,178 H370.0 L368.0,170 Z"/>
+<text class="wv-val" x="552.0" y="173.5" text-anchor="middle">15</text>
+<text class="wv-name" x="4" y="204">R2</text>
+<path class="wv-bus" d="M66.0,192 H526.0 L528.0,200 L526.0,208 H66.0 L64.0,200 Z"/>
+<text class="wv-val" x="296.0" y="203.5" text-anchor="middle">0</text>
+<path class="wv-bus" d="M530.0,192 H686.0 L688.0,200 L686.0,208 H530.0 L528.0,200 Z"/>
+<text class="wv-val" x="608.0" y="203.5" text-anchor="middle">15</text>
+<path class="wv-bus" d="M690.0,192 H734.0 L736.0,200 L734.0,208 H690.0 L688.0,200 Z"/>
+<text class="wv-val" x="712.0" y="203.5" text-anchor="middle">48</text>
+<text class="wv-name" x="4" y="234">R3</text>
+<path class="wv-bus" d="M66.0,222 H734.0 L736.0,230 L734.0,238 H66.0 L64.0,230 Z"/>
+<text class="wv-val" x="400.0" y="233.5" text-anchor="middle">0</text>
+<text class="wv-axis" x="80.0" y="266" text-anchor="middle">0 ns</text>
+<text class="wv-axis" x="400.0" y="266" text-anchor="middle">100 ns</text>
+<text class="wv-axis" x="720.0" y="266" text-anchor="middle">200 ns</text>
+</svg></figure>
+    <div class="body">
+      <h3>RISC16 processor</h3>
+      <p>A 16-bit CPU in Verilog, then a review that found seven problems and a revised design with a self-checking testbench.</p>
+      <p class="tools">Verilog, Vivado</p>
+      <span class="state">Coursework and review</span>
+    </div>
+  </a>
+</div>
+<div class="part ">
+  <a class="fp" href="projects/line-following-robot.html">
+    <span class="desig" aria-hidden="true">U4</span><span class="pin1" aria-hidden="true"></span>
+    <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" aria-hidden="true"><title>Block diagram of the line-following robot electronics</title>
+<defs><marker id="rb-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="bd-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="bd-box" x="20" y="24" width="150" height="56" rx="6"/>
+<text class="bd-text" x="95" y="57" text-anchor="middle">12 V battery</text>
+<rect class="bd-box" x="250" y="24" width="250" height="56" rx="6"/>
+<text class="bd-text" x="375" y="50" text-anchor="middle">Power board</text>
+<text class="bd-small" x="375" y="68" text-anchor="middle">12 V, 5 V (7805), 3.3 V (LD1117)</text>
+<path class="bd-line" d="M170,52 H246" marker-end="url(#rb-arr)"/>
+<rect class="bd-box" x="20" y="150" width="150" height="70" rx="6"/>
+<text class="bd-text" x="95" y="180" text-anchor="middle">Laptop</text>
+<text class="bd-small" x="95" y="200" text-anchor="middle">build, flash, monitor</text>
+<rect class="bd-chip" x="250" y="130" width="250" height="110" rx="6"/>
+<text class="bd-text" x="375" y="170" text-anchor="middle">FRDM-KL25Z</text>
+<text class="bd-small" x="375" y="190" text-anchor="middle">NXP KL25Z, Arm Cortex-M0+, 48 MHz</text>
+<text class="bd-small" x="375" y="208" text-anchor="middle">register-level C firmware</text>
+<path class="bd-line" d="M170,185 H246" marker-start="url(#rb-arr)" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="178" y="176">USB, UART</text>
+<path class="bd-line" d="M330,80 V126" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="338" y="108">3.3 V, 5 V</text>
+<rect class="bd-box" x="580" y="130" width="160" height="70" rx="6"/>
+<text class="bd-text" x="660" y="160" text-anchor="middle">L298 H-bridge</text>
+<text class="bd-small" x="660" y="180" text-anchor="middle">motor driver board</text>
+<path class="bd-line" d="M500,165 H576" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="508" y="156">10 kHz PWM,</text>
+<text class="bd-small" x="508" y="186">direction</text>
+<path class="bd-line" d="M440,80 V100 H660 V126" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="560" y="94">12 V</text>
+<rect class="bd-box" x="580" y="250" width="160" height="56" rx="6"/>
+<text class="bd-text" x="660" y="283" text-anchor="middle">Two gearmotors</text>
+<path class="bd-line" d="M660,200 V246" marker-end="url(#rb-arr)"/>
+<rect class="bd-box" x="250" y="270" width="250" height="50" rx="6"/>
+<text class="bd-text" x="375" y="300" text-anchor="middle">Line and obstacle sensors</text>
+<path class="bd-line" d="M375,270 V244" marker-end="url(#rb-arr)"/>
+<text class="bd-small" x="383" y="262">analogue inputs</text>
+</svg></figure>
+    <div class="body">
+      <h3>Line-following robot</h3>
+      <p>I lead a six-person team and write the firmware: register-level C on an Arm Cortex-M0+.</p>
+      <p class="tools">C, Python</p>
+      <span class="state">In progress</span>
+    </div>
+  </a>
+</div>
+<div class="part ">
+  <a class="fp" href="projects/cold-chain-logger.html">
+    <span class="desig" aria-hidden="true">U5</span><span class="pin1" aria-hidden="true"></span>
+    <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 270" aria-hidden="true"><title>State diagram of the cold-chain logger: idle, transport and alert</title>
+<defs><marker id="ls-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="bd-arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="bd-box" x="20" y="90" width="140" height="64" rx="6"/>
+<text class="bd-text" x="90" y="120" text-anchor="middle">Idle</text>
+<text class="bd-small" x="90" y="140" text-anchor="middle">sensors not sampled</text>
+<rect class="bd-box" x="280" y="90" width="140" height="64" rx="6"/>
+<text class="bd-text" x="350" y="120" text-anchor="middle">Transport</text>
+<text class="bd-small" x="350" y="140" text-anchor="middle">sample every 2 s</text>
+<rect class="bd-box" x="540" y="90" width="140" height="64" rx="6"/>
+<text class="bd-text" x="610" y="120" text-anchor="middle">Alert</text>
+<text class="bd-small" x="610" y="140" text-anchor="middle">red LED, 2 kHz beep</text>
+<path class="bd-line" d="M160,108 H276" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="220" y="98" text-anchor="middle">button: start</text>
+<path class="bd-line" d="M280,136 H164" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="220" y="160" text-anchor="middle">button: stop,</text>
+<text class="bd-small" x="220" y="175" text-anchor="middle">print event log</text>
+<path class="bd-line" d="M420,108 H536" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="480" y="82" text-anchor="middle">temperature out</text>
+<text class="bd-small" x="480" y="97" text-anchor="middle">of range, or shock</text>
+<path class="bd-line" d="M540,136 H424" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="480" y="160" text-anchor="middle">3 good readings</text>
+<text class="bd-small" x="480" y="175" text-anchor="middle">in a row</text>
+<path class="bd-line" d="M610,154 V222 H90 V158" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="350" y="244" text-anchor="middle">button: stop, print event log</text>
+<path class="bd-line thin" d="M90,30 V86" marker-end="url(#ls-arr)"/>
+<text class="bd-small" x="100" y="40">power on</text>
+</svg></figure>
+    <div class="body">
+      <h3>Cold-chain logger</h3>
+      <p>An STM32 logger that sounds an alarm when the temperature leaves its range or the package takes a knock.</p>
+      <p class="tools">C++, Mbed OS, I2C, SPI</p>
+      <span class="state">Pair project</span>
+    </div>
+  </a>
+</div>
+  </div>
+</div>
+
+<section class="section" id="more" aria-labelledby="more-h">
+  <div class="wrap">
+    <h2 id="more-h">More projects</h2>
+    <p class="lede">Smaller pieces of coursework, labs and earlier designs.</p>
+    <ul class="rows">
+<li><div class="row"><span class="ref">R1</span><h3><a href="projects/stm32-labs.html">STM32 lab programs</a></h3><p>Timers and PWM, an accelerometer over SPI and a temperature sensor over I2C, including shutdown mode.</p><a class="go" href="projects/stm32-labs.html">Read more</a></div></li>
+<li><div class="row"><span class="ref">R2</span><h3><a href="projects/tcad-pn-junction.html">p-n junction in Sentaurus TCAD</a></h3><p>A silicon junction simulated with and without recombination, and what the current curves show.</p><a class="go" href="projects/tcad-pn-junction.html">Read more</a></div></li>
+<li><div class="row"><span class="ref">R3</span><h3><a href="projects/signal-processing.html">Signal processing in Python</a></h3><p>Aliasing, AM modulation and a DFT written from its definition, checked against NumPy's FFT.</p><a class="go" href="projects/signal-processing.html">Read more</a></div></li>
+<li><div class="row"><span class="ref">R4</span><h3><a href="projects/ring-counter.html">Ring counter on a MAX 10 FPGA</a></h3><p>Logic built in Quartus, simulated, then clocked on the board from a push-button and a signal generator.</p><a class="go" href="projects/ring-counter.html">Read more</a></div></li>
+<li><div class="row"><span class="ref">R5</span><h3><a href="projects/year1-pcbs.html">Year 1 circuit boards</a></h3><p>An electronic dice and a logic board, designed in OrCAD and Allegro, then built and tested by hand.</p><a class="go" href="projects/year1-pcbs.html">Read more</a></div></li>
+<li><div class="row"><span class="ref">R6</span><h3><a href="https://github.com/KartikeSharan/engineering-projects/tree/main/quine-mccluskey">Quine-McCluskey minimiser</a></h3><p>Boolean logic minimisation with don't-care terms, in Python. Programming 2 coursework.</p><a class="go" href="https://github.com/KartikeSharan/engineering-projects/tree/main/quine-mccluskey">View on GitHub</a></div></li>
+<li><div class="row"><span class="ref">R7</span><h3><a href="https://github.com/KartikeSharan/engineering-projects/tree/main/gud-flight-controller">Society flight controller</a></h3><p>An earlier Glasgow University Drones flight controller schematic, modelled on the Pixhawk connector standard.</p><a class="go" href="https://github.com/KartikeSharan/engineering-projects/tree/main/gud-flight-controller">View on GitHub</a></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="experience" aria-labelledby="exp-h">
+  <div class="wrap">
+    <h2 id="exp-h">Experience</h2>
+    <p class="lede">Most recent first.</p>
+    <ol class="timeline">
+<li>
+  <div class="role-head"><h3>Engineering and Maintenance Summer Placement</h3><span class="when">Jul to Sep 2026</span></div>
+  <p class="org">Sellafield Ltd, Cumbria</p>
+  <p>Rotations in remote robotics and distributed control systems (DCS) on a nuclear-licensed site. BPSS cleared.</p>
+  <ul>
+<li>Wrote precheck and runcheck logic in Taylor Control Language for a high-level waste plant modification on an ABB MOD 300 Advant DCS, so that normal running (one of four feed states) depends on a new air-sparge flow meter.</li>
+<li>Built an offline test environment and verified the logic before installation, catching earlier-stage errors for correction.</li>
+<li>Traced a steam-flow fault that was halting an evaporator to the 4–20 mA to 1–5 V conversion stage, and switched the live DCS to its backup controller under supervision. Flow was restored after the faulty hardware was replaced.</li>
+<li>Replaced controller and network cards on an operational MOD 300 DCS; wrote a software-switch operating-conditions report, issued to Operations Support, and revised an operator change-control procedure.</li>
+<li>Configured autonomous inspection routes for a Boston Dynamics Spot and designed structured tests of its AI anomaly detection; isolated a fleet-software data-transfer fault and debugged ROS 2 reference-frame errors.</li>
+<li>Proposed a client-task workflow for the robotics team, which was approved, and presented my placement to the Director of Maintenance.</li>
+  </ul>
+</li>
+<li>
+  <div class="role-head"><h3>Vice President, and Head of Electronics since Sep 2025</h3><span class="when">Feb 2025 to now</span></div>
+  <p class="org">Glasgow University Drones</p>
+  
+  <ul>
+<li>Lead a team of three to five electronics engineers, with final approval on every schematic and PCB layout, and run KiCad workshops.</li>
+<li>Proposed and designed the society's <a href="projects/drone-kit.html">educational drone kit</a>.</li>
+<li>Electronics lead for the society's IMechE UAS Challenge entry: raised £1,820 in sponsorship and a University grant, and modelling mission energy for its 10 kg VTOL quadplane.</li>
+<li>Recruited more than ten new members and assigned project team leads.</li>
+  </ul>
+</li>
+<li>
+  <div class="role-head"><h3>Electronic Engineer (voluntary)</h3><span class="when">Jun to Nov 2025</span></div>
+  <p class="org">Atreides Industries, drone start-up</p>
+  
+  <ul>
+<li>Owned the PCB layout of the company's <a href="projects/flight-controller.html">flight controller</a> alongside the schematic engineer.</li>
+<li>Repaired rework-damaged speed controllers back to spares stock.</li>
+<li>Dealt with suppliers on procurement, and with the mechanical and electronics engineers on interfaces.</li>
+  </ul>
+</li>
+<li>
+  <div class="role-head"><h3>International Ambassador</h3><span class="when">Feb 2026 to now</span></div>
+  <p class="org">James Watt School of Engineering</p>
+  
+  <ul>
+<li>Presented to about 40 prospective exchange students in Chengdu, and now support two newly arrived exchange students.</li>
+<li>Helping the University build an exchange support programme for later cohorts.</li>
+  </ul>
+</li>
+<li>
+  <div class="role-head"><h3>Maths and Physics Tutor</h3><span class="when">2022 to now</span></div>
+  <p class="org">Self-employed</p>
+  
+  <ul>
+<li>Tutor students up to Advanced Higher: all ten of last year's students achieved an A or B, and 80% of those applying to university got their first choice.</li>
+  </ul>
+</li>
+<li>
+  <div class="role-head"><h3>Co-founder and CEO</h3><span class="when">2026 to now</span></div>
+  <p class="org">Kathode</p>
+  
+  <ul>
+<li>An early-stage start-up planning low-cost EV charging built into on-street parking, for streets of tenements with nowhere to charge.</li>
+  </ul>
+</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <h2 id="skills-h">Skills</h2>
+    <p class="lede">Laid out like a bill of materials, with where I've used each one.</p>
+    <table class="bom">
+      <thead><tr><th scope="col">Item</th><th scope="col">Part</th><th scope="col">Where I've used it</th></tr></thead>
+      <tbody>
+<tr><td>1</td><td>KiCad</td><td>Six-layer flight controller with blind vias; two-layer drone kit; ERC, DRC, Gerbers and assembly files</td></tr>
+<tr><td>2</td><td>OrCAD Capture and Allegro</td><td>Year 1 boards, designed, built and tested; Year 2 design labs</td></tr>
+<tr><td>3</td><td>Verilog and Vivado</td><td>RISC16 processor: datapath, control FSM and testbenches</td></tr>
+<tr><td>4</td><td>VHDL and Quartus</td><td>Logic on a MAX 10 FPGA</td></tr>
+<tr><td>5</td><td>C and C++ on Arm Cortex-M</td><td>STM32 with Mbed OS; NXP KL25Z at register level</td></tr>
+<tr><td>6</td><td>SPI, I2C, UART, PWM, interrupts</td><td>Sensor drivers, motor control and debug output</td></tr>
+<tr><td>7</td><td>Python</td><td>Signal processing with NumPy, a build-and-flash tool, Boolean minimisation</td></tr>
+<tr><td>8</td><td>MATLAB and Simulink</td><td>Simulation coursework and MathWorks Onramp certificates</td></tr>
+<tr><td>9</td><td>LTspice, PSpice and Sentaurus TCAD</td><td>Amplifier and filter labs; p-n junction simulation</td></tr>
+<tr><td>10</td><td>ABB MOD 300, MOD 300 Advant and 800xA DCS</td><td>Control logic in Taylor Control Language and card replacement at Sellafield</td></tr>
+<tr><td>11</td><td>ROS 2 and Boston Dynamics Spot</td><td>Inspection routes and reference-frame debugging at Sellafield</td></tr>
+<tr><td>12</td><td>Bench equipment</td><td>Oscilloscopes, signal generators, bench supplies, soldering and rework</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="education" aria-labelledby="edu-h">
+  <div class="wrap">
+    <h2 id="edu-h" style="margin-bottom:28px">Education and awards</h2>
+    <div class="edu">
+      <div>
+        <h3>University of Glasgow</h3>
+        <p>BEng (Hons) Electronics and Electrical Engineering, 2024 to 2028</p>
+        <p class="muted">Third year. Expected First Class Honours; current average 20/22 (A band).</p>
+      </div>
+      <div>
+        <h3>UESTC, Chengdu</h3>
+        <p>Year 2 exchange semester, Feb to Jul 2026</p>
+        <p class="muted">Funded by a China Link Scholarship. Embedded Processors: 82%.</p>
+      </div>
+      <div>
+        <h3>Belmont House School</h3>
+        <p>Advanced Highers: Mathematics (A), Physics (B)</p>
+        <p class="muted">Six Highers at A to B.</p>
+      </div>
+      <div>
+        <h3>Awards</h3>
+        <p>Engineering Excellence List (2025); China Link Scholarship (2026); Passant Cup for Mathematics (2024); UKMT Best in School for Mathematics (2023); represented Scotland at chess (2020).</p>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <p>English (native); Hindi, Nepali and Urdu (fluent spoken); Punjabi (conversational).</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="muted">The quickest way to reach me is email. I'm free for an internship across summer 2027.</p>
+      <div class="connector">
+  
+  <a class="pad-link" href="mailto:&#75;&#97;&#114;&#116;&#105;&#107;&#101;&#83;&#104;&#97;&#114;&#97;&#110;&#48;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+  <a class="pad-link" href="https://www.linkedin.com/in/kartike-sharan/" rel="me">LinkedIn</a>
+  <a class="pad-link" href="https://github.com/KartikeSharan" rel="me">GitHub</a>
+</div>
+      <small>Rev 2026.11. Board renders are made from my Gerber files. Hosted on GitHub Pages.</small>
+    </div>
+    <fieldset class="mask-picker">
+      <legend>Solder mask colour</legend>
+      <div class="swatches">
+      <button type="button" data-mask="green" style="--sw:#123f2a" aria-pressed="true"><span class="label">Green</span></button>
+      <button type="button" data-mask="black" style="--sw:#1b1c1e" aria-pressed="false"><span class="label">Matte black</span></button>
+      <button type="button" data-mask="blue" style="--sw:#0f2f5c" aria-pressed="false"><span class="label">Blue</span></button>
+      <button type="button" data-mask="purple" style="--sw:#3a1d5c" aria-pressed="false"><span class="label">Purple</span></button>
+      <button type="button" data-mask="white" style="--sw:#f3f3ee" aria-pressed="false"><span class="label">White</span></button>
+      </div>
+    </fieldset>
+  </div>
+</footer>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
