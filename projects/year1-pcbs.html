@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Year 1 circuit boards: Kartike Sharan</title>
-<meta name="description" content="An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.">
+<title>Year 1 and 2 circuit boards: Kartike Sharan</title>
+<meta name="description" content="An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand, and a Year 2 op-amp filter board.">
 <meta name="author" content="Kartike Sharan">
 <meta name="theme-color" content="#123f2a">
 <link rel="canonical" href="https://kartikesharan.github.io/projects/year1-pcbs.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Year 1 circuit boards: Kartike Sharan">
-<meta property="og:description" content="An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.">
+<meta property="og:title" content="Year 1 and 2 circuit boards: Kartike Sharan">
+<meta property="og:description" content="An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand, and a Year 2 op-amp filter board.">
 <meta property="og:url" content="https://kartikesharan.github.io/projects/year1-pcbs.html">
 <meta property="og:image" content="https://kartikesharan.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -31,10 +31,10 @@
 <main id="main" class="wrap">
 <div class="doc-head">
   <span class="ref">R6</span>
-  <h1>Year 1 circuit boards</h1>
-  <p class="summary">An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.</p>
+  <h1>Year 1 and 2 circuit boards</h1>
+  <p class="summary">An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand, and a Year 2 op-amp filter board.</p>
   <dl class="facts">
-  <div><dt>Course</dt><dd>Engineering Skills 1, University of Glasgow (2024)</dd></div>
+  <div><dt>Course</dt><dd>Engineering Skills 1 (2024) and Electronic Design Project 2 (2025), University of Glasgow</dd></div>
   <div><dt>Tools</dt><dd>OrCAD Capture, Allegro PCB Editor, bench supply, multimeter, soldering</dd></div>
   </dl>
 </div>
@@ -72,6 +72,27 @@
   <figcaption><b>Figure 4.</b> Logic board, top layer.</figcaption>
 </figure>
 </div>
+</section>
+
+<section>
+<h2>Year 2: op-amp filter board</h2>
+<div class="prose">
+<p>The first design lab of Electronic Design Project 2: an inverting amplifier on an MCP6291 op-amp, running from a single supply with a mid-rail reference made by two 1 kΩ resistors and 4.7 µF capacitors. The 1 µF and 330 kΩ input pair and the 2 MΩ and 10 nF feedback pair make it a band-pass stage, passing roughly 0.5 to 8 Hz with a gain of about six, the range a pulse signal sits in. I drew the schematic in OrCAD Capture, laid out the board in Allegro and exported the artwork films for the photomask.</p>
+</div>
+<div class="fig-pair">
+<figure class="fig ">
+  <div class="frame paper"><img src="../assets/img/dp2-schematic.webp" alt="Schematic of the MCP6291 band-pass amplifier" loading="lazy"></div>
+  <figcaption><b>Figure 5.</b> Design lab schematic.</figcaption>
+</figure>
+<figure class="fig ">
+  <div class="frame paper"><img src="../assets/img/dp2-pcb.webp" alt="Allegro layout of the amplifier board" loading="lazy"></div>
+  <figcaption><b>Figure 6.</b> The board in Allegro.</figcaption>
+</figure>
+</div>
+<figure class="fig narrow">
+  <div class="frame paper"><img src="../assets/img/dp2-art-bottom.webp" alt="Bottom-layer artwork film of the amplifier board" loading="lazy"></div>
+  <figcaption><b>Figure 7.</b> Bottom artwork film, as sent for the photomask.</figcaption>
+</figure>
 </section>
 
 <div class="links">

@@ -391,6 +391,7 @@ project(
 </div>
 {fig_svg('logger-states.svg', 'The logger\'s three states and what moves it between them.', 1, cls='chart')}
 {fig_svg('logger-block.svg', 'Hardware: two sensors on separate buses, with the button on an interrupt and the buzzer on PWM.', 2, cls='chart')}
+{fig('assets/img/logger-demo.webp', 'The logger built on a breadboard, connected to a laptop showing its serial output', 'The breadboard build during our demonstration, with the event log on the laptop.', 3)}
 </section>
 
 <section>
@@ -566,9 +567,9 @@ project(
     [('Report on GitHub', CODE + 'de2-vhdl-ring-counter')])
 
 project(
-    'year1-pcbs', 'R6','Year 1 circuit boards',
-    'An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.',
-    [('Course', 'Engineering Skills 1, University of Glasgow (2024)'),
+    'year1-pcbs', 'R6','Year 1 and 2 circuit boards',
+    'An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand, and a Year 2 op-amp filter board.',
+    [('Course', 'Engineering Skills 1 (2024) and Electronic Design Project 2 (2025), University of Glasgow'),
      ('Tools', 'OrCAD Capture, Allegro PCB Editor, bench supply, multimeter, soldering')],
     f'''
 <section>
@@ -591,6 +592,18 @@ project(
 {fig('assets/img/logic-board-schematic.webp', 'Schematic of the logic board', 'Logic board schematic.', 3, paper=True)}
 {fig('assets/img/logic-board-top-pcb.webp', 'Top copper layout of the logic board', 'Logic board, top layer.', 4, paper=True)}
 </div>
+</section>
+
+<section>
+<h2>Year 2: op-amp filter board</h2>
+<div class="prose">
+<p>The first design lab of Electronic Design Project 2: an inverting amplifier on an MCP6291 op-amp, running from a single supply with a mid-rail reference made by two 1 kΩ resistors and 4.7 µF capacitors. The 1 µF and 330 kΩ input pair and the 2 MΩ and 10 nF feedback pair make it a band-pass stage, passing roughly 0.5 to 8 Hz with a gain of about six, the range a pulse signal sits in. I drew the schematic in OrCAD Capture, laid out the board in Allegro and exported the artwork films for the photomask.</p>
+</div>
+<div class="fig-pair">
+{fig('assets/img/dp2-schematic.webp', 'Schematic of the MCP6291 band-pass amplifier', 'Design lab schematic.', 5, paper=True)}
+{fig('assets/img/dp2-pcb.webp', 'Allegro layout of the amplifier board', 'The board in Allegro.', 6, paper=True)}
+</div>
+{fig('assets/img/dp2-art-bottom.webp', 'Bottom-layer artwork film of the amplifier board', 'Bottom artwork film, as sent for the photomask.', 7, paper=True, cls='narrow')}
 </section>
 ''',
     [('Design files on GitHub', CODE + 'year1-pcb-design')])
@@ -682,8 +695,8 @@ MORE = [
      'Aliasing, AM modulation and a DFT written from its definition, checked against NumPy\'s FFT.'),
     ('R5', 'Ring counter on a MAX 10 FPGA', 'projects/ring-counter.html',
      'Logic built in Quartus, simulated, then clocked on the board from a push-button and a signal generator.'),
-    ('R6', 'Year 1 circuit boards', 'projects/year1-pcbs.html',
-     'An electronic dice and a logic board, designed in OrCAD and Allegro, then built and tested by hand.'),
+    ('R6', 'Year 1 and 2 circuit boards', 'projects/year1-pcbs.html',
+     'An electronic dice and a logic board, built and tested by hand, and a Year 2 op-amp filter board, all in OrCAD and Allegro.'),
     ('R7', 'Quine-McCluskey minimiser', CODE + 'quine-mccluskey',
      'Boolean logic minimisation with don\'t-care terms, in Python. Programming 2 coursework.'),
     ('R8', 'Society flight controller', CODE + 'gud-flight-controller',
