@@ -410,7 +410,42 @@ project(
     [('Code on GitHub', CODE + 'stm32-embedded/cold-chain-logger')])
 
 project(
-    'stm32-labs', 'R1', 'STM32 lab programs',
+    'heart-rate-monitor', 'R1', 'Heart rate monitor',
+    'A Year 2 team project: a battery-powered monitor that reads the pulse from a finger clip and shows the heart rate in beats per minute. Four of us built it as KEFF Tech (Team 21).',
+    [('Team', 'Four students, Team 21 (KEFF Tech)'),
+     ('Course', 'Electronic Design Project 2, University of Glasgow (2025 to 2026)'),
+     ('My part', 'Circuit, PCB layout, build and code, worked on with the team; unofficial team lead until February 2026'),
+     ('Microcontroller', 'NXP LPC1768 on an mbed board'),
+     ('Tools', 'OrCAD Capture, Allegro, Mbed, oscilloscope')],
+    f'''
+<section>
+<h2>How it works</h2>
+<div class="prose">
+<p>A clip on the fingertip shines infrared light into the finger, and a phototransistor on the other side picks up the small changes in light as blood pulses through. This is photoplethysmography, or PPG. The raw signal is tiny and sits on a large steady offset, so a two-stage band-pass amplifier built around MCP6292 op-amps strips the offset and amplifies the pulse, running from a single 3.3 V rail with a 1.65 V reference.</p>
+<p>An LPC1768 microcontroller samples the pulse, smooths it, and counts a beat each time the signal rises through a threshold, ignoring anything too soon after the last beat. Beats per minute come from the time between beats. The reading appears on an LCD, an 8×8 LED matrix driven by a MAX7221 shows a beating heart or the pulse trace, and an RGB LED flashes with each beat. A PP3 9 V battery and an LM2937 regulator power the board.</p>
+</div>
+{fig_svg('hrm-block.svg', 'How the monitor\'s parts fit together.', 1, cls='chart')}
+</section>
+
+<section>
+<h2>Results</h2>
+<div class="prose">
+<p>On the finished board, a resting reading of 58 beats per minute rose to 88 after a walk outside, and a smartwatch gave similar readings.</p>
+</div>
+</section>
+
+<section>
+<h2>My part</h2>
+<div class="prose">
+<p>We didn't split the work into fixed roles: all four of us worked on the circuit, the PCB layout in Allegro, building and testing, and the microcontroller code. Until I left for my exchange semester in Chengdu in February 2026, I acted as the team's unofficial lead, and I set up our risk register.</p>
+<p>The life cycle assessment, the final report and presentation, and the photos and videos were done by the rest of the team after I left, so none of them are shown here.</p>
+</div>
+</section>
+''',
+    [])
+
+project(
+    'stm32-labs', 'R2', 'STM32 lab programs',
     'Ten programs for the NUCLEO-L432KC from the Embedded Processors labs at UESTC: timers and PWM, an accelerometer over SPI and a temperature sensor over I2C.',
     [('Course', 'Embedded Processors, UESTC (2026); module mark 82%'),
      ('Board', 'NUCLEO-L432KC (Arm Cortex-M4F)'),
@@ -455,7 +490,7 @@ project(
     [('Code on GitHub', CODE + 'stm32-embedded')])
 
 project(
-    'tcad-pn-junction', 'R2', 'Silicon p-n junction in Sentaurus TCAD',
+    'tcad-pn-junction', 'R3','Silicon p-n junction in Sentaurus TCAD',
     'Simulating a silicon p-n junction with and without recombination in Synopsys Sentaurus TCAD, and reading what the current-voltage curves show.',
     [('Course', 'Electronic Devices 3, University of Glasgow (Oct 2026)'),
      ('Tools', 'Synopsys Sentaurus Structure Editor and Sentaurus Device'),
@@ -483,7 +518,7 @@ project(
     [('Simulation files on GitHub', CODE + 'tcad-pn-junction')])
 
 project(
-    'signal-processing', 'R3', 'Signal processing in Python',
+    'signal-processing', 'R4','Signal processing in Python',
     'Sampling, aliasing and AM modulation simulated in Python, with a discrete Fourier transform written from its definition and checked against NumPy\'s FFT.',
     [('Course', 'Communication Systems 3, University of Glasgow (Oct 2026)'),
      ('Tools', 'Python, NumPy, Matplotlib, Jupyter')],
@@ -510,7 +545,7 @@ project(
     [('Notebook on GitHub', CODE + 'comms-signal-processing-python')])
 
 project(
-    'ring-counter', 'R4', 'Ring counter on a MAX 10 FPGA',
+    'ring-counter', 'R5','Ring counter on a MAX 10 FPGA',
     'Digital logic in Quartus on a DE10-Lite board: a ripple-carry adder driving a seven-segment display, a ripple counter and an 8-bit ring counter.',
     [('Course', 'Digital Electronics 2, University of Glasgow (2025)'),
      ('Board', 'Terasic DE10-Lite (Intel MAX 10 FPGA)'),
@@ -528,7 +563,7 @@ project(
     [('Report on GitHub', CODE + 'de2-vhdl-ring-counter')])
 
 project(
-    'year1-pcbs', 'R5', 'Year 1 circuit boards',
+    'year1-pcbs', 'R6','Year 1 circuit boards',
     'An electronic dice and a logic board, designed in OrCAD Capture and Allegro, then built and tested by hand.',
     [('Course', 'Engineering Skills 1, University of Glasgow (2024)'),
      ('Tools', 'OrCAD Capture, Allegro PCB Editor, bench supply, multimeter, soldering')],
@@ -634,19 +669,21 @@ def part_html(slug, ref, size, title, line, tools, state, img):
 
 
 MORE = [
-    ('R1', 'STM32 lab programs', 'projects/stm32-labs.html',
+    ('R1', 'Heart rate monitor', 'projects/heart-rate-monitor.html',
+     'A Year 2 team of four built a finger-clip pulse monitor on an LPC1768, with a band-pass amplifier, beat detection and an LED display.'),
+    ('R2', 'STM32 lab programs', 'projects/stm32-labs.html',
      'Timers and PWM, an accelerometer over SPI and a temperature sensor over I2C, including shutdown mode.'),
-    ('R2', 'p-n junction in Sentaurus TCAD', 'projects/tcad-pn-junction.html',
+    ('R3', 'p-n junction in Sentaurus TCAD', 'projects/tcad-pn-junction.html',
      'A silicon junction simulated with and without recombination, and what the current curves show.'),
-    ('R3', 'Signal processing in Python', 'projects/signal-processing.html',
+    ('R4', 'Signal processing in Python', 'projects/signal-processing.html',
      'Aliasing, AM modulation and a DFT written from its definition, checked against NumPy\'s FFT.'),
-    ('R4', 'Ring counter on a MAX 10 FPGA', 'projects/ring-counter.html',
+    ('R5', 'Ring counter on a MAX 10 FPGA', 'projects/ring-counter.html',
      'Logic built in Quartus, simulated, then clocked on the board from a push-button and a signal generator.'),
-    ('R5', 'Year 1 circuit boards', 'projects/year1-pcbs.html',
+    ('R6', 'Year 1 circuit boards', 'projects/year1-pcbs.html',
      'An electronic dice and a logic board, designed in OrCAD and Allegro, then built and tested by hand.'),
-    ('R6', 'Quine-McCluskey minimiser', CODE + 'quine-mccluskey',
+    ('R7', 'Quine-McCluskey minimiser', CODE + 'quine-mccluskey',
      'Boolean logic minimisation with don\'t-care terms, in Python. Programming 2 coursework.'),
-    ('R7', 'Society flight controller', CODE + 'gud-flight-controller',
+    ('R8', 'Society flight controller', CODE + 'gud-flight-controller',
      'An earlier Glasgow University Drones flight controller schematic, modelled on the Pixhawk connector standard.'),
 ]
 
